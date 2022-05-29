@@ -21,7 +21,8 @@ public class HelloServlet extends HttpServlet {
 //        out.println("<html><body>");
 //        out.println("<h1>" + message + "</h1>");
 //        out.println("</body></html>");
-        response.getWriter().println("Hello Hello!");
+        response.getWriter().println("serverName: "+ request.getServerName());
+        response.getWriter().println(request.getAuthType());
     }
 
     public void destroy() {
