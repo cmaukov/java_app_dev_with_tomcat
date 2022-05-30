@@ -13,10 +13,10 @@ public class HelloHelper {
         String greeting;
         // using enhanced switch statement
         switch (languageTag) {
-            case "fr" -> greeting = "Bonjour";
-            case "de" -> greeting = "Guten Tag";
+            case "fr" -> greeting = "Bonjour ";
+            case "de" -> greeting = "Guten Tag ";
             default -> {
-                greeting = "hello";
+                greeting = "hello ";
                 languageTag = "en";
             }
 
