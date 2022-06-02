@@ -13,5 +13,14 @@
 <!--        <filter-name>Filter_1</filter-name>-->
 <!--        <url-pattern>/*</url-pattern>-->
 <!--    </filter-mapping>-->
+    <servlet>
+        <servlet-name>Main</servlet-name>
+        <servlet-class>com.jakarta.play.MainServlet</servlet-class>
+
+        <init-param>
+            <param-name>productName</param-name>
+            <param-value>My Special Product</param-value>
+        </init-param>
+    </servlet>
 
 </web-app>
