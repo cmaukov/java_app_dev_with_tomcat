@@ -16,21 +16,25 @@ import java.io.IOException;
 @WebServlet(urlPatterns = {"/home", "*.do", ""}, name = "Main")
 public class MainServlet extends HttpServlet {
     String product = "My Product";
+    String connectionString = "";
 
     @Override
     public void init() throws ServletException {
+        connectionString = getServletContext().getInitParameter("connStr");
        product = getInitParameter("productName");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         resp.setContentType("text/xml");
         String name = req.getParameter("name");
         if (name != null) {
             resp.getWriter().println(String.format("<application>" +
                     "<name>Hello, %s</name>"+
                     "<product>%s</product>"+
-                    "</application>", name, product));
+                    "<conn>%s</conn>"+
+                    "</application>", name, product, connectionString));
         }else {
             resp.getWriter().println(String.format("<msg>Please enter your name</msg>"));
         }
