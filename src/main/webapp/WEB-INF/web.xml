@@ -3,28 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <!--    <filter>-->
-    <!--        <filter-name>Filter_1</filter-name>-->
-    <!--        <filter-class>com.example.demo.Filter_1</filter-class>-->
-    <!--    </filter>-->
-
-
-    <!--    <filter-mapping>-->
-    <!--        <filter-name>Filter_1</filter-name>-->
-    <!--        <url-pattern>/*</url-pattern>-->
-    <!--    </filter-mapping>-->
     <context-param>
-        <param-name>connStr</param-name>
-        <param-value>usr=bob;pwd=bobster</param-value>
+        <param-name>productName</param-name>
+        <param-value>Super Blog</param-value>
     </context-param>
-    <servlet>
-        <servlet-name>Main</servlet-name>
-        <servlet-class>com.jakarta.play.MainServlet</servlet-class>
 
-        <init-param>
-            <param-name>productName</param-name>
-            <param-value>My Special Product</param-value>
-        </init-param>
-    </servlet>
 
 </web-app>
