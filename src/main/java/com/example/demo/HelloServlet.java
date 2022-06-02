@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 //@WebServlet(name = "helloServlet", value = "/hello-servlet", urlPatterns = {"/hello-servlet","/hello"})
-@WebServlet(urlPatterns = {"/hello-servlet","/hello","*.do","/hi"})
+@WebServlet(urlPatterns = {"/hello-servlet","/hello","*.poo","/hi"})
 public class HelloServlet extends HttpServlet {
     private String message;
 
