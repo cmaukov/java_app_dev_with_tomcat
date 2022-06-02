@@ -10,7 +10,14 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <br/>
-<a href="main">MainServlet</a>
-
+<a href="home">MainServlet</a>
+<form action="home" method="post">
+    <p>
+       Name: <input type="text" name="name">
+    </p>
+    <p>
+        <input type="submit" value="Enter Name">
+    </p>
+</form>
 </body>
 </html>
