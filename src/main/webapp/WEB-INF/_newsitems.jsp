@@ -5,13 +5,14 @@
     <%
         List<NewsItem> items = (List<NewsItem>) request.getAttribute("items");
     %>
-    <% for (NewsItem item : items) { %>
+    <% for (NewsItem item : items) {
+    request.setAttribute("item", item);
+    %>
 
     <div>
-        <h2><a href="/news/<%= item.getTitle()%>.do"><%= item.getTitle() %>
-        </a></h2>
+        <h2> <a href="/news/${item.title}.do">${item.title} </a></h2>
         <div>
-            <%= item.getEntry() %>
+           ${item.entry}
         </div>
     </div>
     <% } %>
