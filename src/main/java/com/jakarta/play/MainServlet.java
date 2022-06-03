@@ -4,6 +4,8 @@ package com.jakarta.play;
  * @author Konstantin Staykov
  */
 
+import com.jakarta.play.blog.ApplicationSettings;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,13 +21,22 @@ public class MainServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         product = getServletContext().getInitParameter("productName");
+        var applicationSettings = new ApplicationSettings();
+        getServletContext().setAttribute("app", applicationSettings);
         if (product == null || product.isEmpty()) throw new ServletException("Unable to initialize");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        setUpData(req,ApplicationSettings.topic, ApplicationSettings.all);
         var dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
         dispatcher.forward(req, resp);
+    }
+
+    private void setUpData(HttpServletRequest request, String type, String detail) {
+        ApplicationSettings applicationSettings = (ApplicationSettings) getServletContext().getAttribute("app");
+        var data = applicationSettings.setupData(type, detail);
+        request.setAttribute("items", data);
     }
 
 }
