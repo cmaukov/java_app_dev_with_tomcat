@@ -6,6 +6,8 @@
     colors.add("Default");
     colors.add("Red");
     colors.add("Green");
+//adding colors as attribute
+    request.setAttribute("colors", colors);
 %>
 
 <header class="clearfix">
@@ -31,12 +33,11 @@
                             Color
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<%--                            adding colors to the drop-down list--%>
-                            <% for (String color : colors) { %>
-                            <li>
-                                <%=color%>
-                            </li>
-                            <% } %>
+<%--                            using expression language to get the colors and add them to the page--%>
+                            <li>${colors[2]}</li>
+                            <li>${colors[1]}</li>
+                            <li>${colors[0]}</li>
+
                         </ul>
                     </li>
                     <li class="nav-item">
