@@ -2,7 +2,7 @@
 <html>
 <head>
     <title><%= application.getInitParameter("productName") %></title>
-    <link href='bootstrap/css/bootstrap.min.css' rel="stylesheet" type="text/css"/>
+    <link href='${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css' rel="stylesheet" type="text/css"/>
 </head>
 <link href="app.css" rel="stylesheet" type="text/css"/>
 <body>
@@ -20,6 +20,6 @@
         </div>
     </div>
 </section>
-<script src="bootstrap/js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
