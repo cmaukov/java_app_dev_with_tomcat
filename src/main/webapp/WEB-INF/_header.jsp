@@ -7,7 +7,9 @@
     colors.add("Red");
     colors.add("Green");
 //adding colors as attribute
-    request.setAttribute("colors", colors);
+//    request.setAttribute("colors", colors);
+    // intelliJ doesn't like it but it works. we are defining the colors only within the page instead of globally by using request.setAttribute
+    pageContext.setAttribute("colors", colors);
 %>
 
 <header class="clearfix">
@@ -34,9 +36,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 <%--                            using expression language to get the colors and add them to the page--%>
-                            <li>${colors[2]}</li>
-                            <li>${colors[1]}</li>
                             <li>${colors[0]}</li>
+                            <li>${colors[1]}</li>
+                            <li>${colors[2]}</li>
 
                         </ul>
                     </li>

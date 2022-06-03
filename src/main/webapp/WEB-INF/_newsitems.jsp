@@ -6,7 +6,9 @@
         List<NewsItem> items = (List<NewsItem>) request.getAttribute("items");
     %>
     <% for (NewsItem item : items) {
-    request.setAttribute("item", item);
+//    request.setAttribute("item", item);
+        // we could use it in the page context only - request is available for all pages
+    pageContext.setAttribute("item", item);
     %>
 
     <div>
