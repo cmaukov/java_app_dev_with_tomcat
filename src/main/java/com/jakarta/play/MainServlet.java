@@ -24,7 +24,8 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("");
+        var dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
+        dispatcher.forward(req, resp);
     }
 
 }
