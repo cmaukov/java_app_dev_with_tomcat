@@ -5,7 +5,8 @@
     <title> ${initParam["productName"]}</title>
     <link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet" text="text/css"/>
 </head>
-<link href="${pageContext.request.contextPath}/app.css" rel="stylesheet" type="text/css"/>
+<link href="<c:url value = "/app.css" />" rel="stylesheet" type="text/css"/>
+<%--<link href="${pageContext.request.contextPath}/app.css" rel="stylesheet" type="text/css"/>--%>
 <body>
 
 <%@include file="_header.jsp" %>
@@ -24,6 +25,7 @@
         </div>
     </div>
 </section>
-<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
+<script src="<c:url value="/bootstrap/js/bootstrap.js"/>"></script>
+<%--<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>--%>
 </body>
 </html>
