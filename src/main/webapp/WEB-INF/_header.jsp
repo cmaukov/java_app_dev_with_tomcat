@@ -44,10 +44,10 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <c:choose>
                                 <c:when test="${!empty user}">
-                                    <%--using expression language to get the colors and add them to the page--%>
-                                    <li>${colors[0]}</li>
-                                    <li>${colors[1]}</li>
-                                    <li>${colors[2]}</li>
+                                    <c:forEach items="${colors}" var="color">
+                                        <li>${color}</li>
+                                    </c:forEach>
+
                                 </c:when>
                                 <c:otherwise>
                                     <li>No User Logged In</li>
