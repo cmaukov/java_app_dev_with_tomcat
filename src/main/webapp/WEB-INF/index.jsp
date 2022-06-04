@@ -13,7 +13,9 @@
     <div class="row row-cols-2 gy-5">
         <div class="col-4 p-4">
             <div class="p-3 border bg-light">
-                <%@include file="_topics.jsp" %>
+                <c:import url="_topics.jsp" var="topics" scope="application"/>
+                ${topics}
+<%--                <%@include file="_topics.jsp" %>--%>
             </div>
         </div>
         <div class="col-8 p-4">
