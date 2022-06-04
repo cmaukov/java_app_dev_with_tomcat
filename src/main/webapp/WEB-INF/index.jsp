@@ -3,7 +3,7 @@
 <html>
 <head>
     <title> ${initParam["productName"]}</title>
-    <link href='${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css' rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet" text="text/css"/>
 </head>
 <link href="${pageContext.request.contextPath}/app.css" rel="stylesheet" type="text/css"/>
 <body>
