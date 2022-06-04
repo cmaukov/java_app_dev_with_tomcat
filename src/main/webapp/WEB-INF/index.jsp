@@ -1,22 +1,24 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= application.getInitParameter("productName") %></title>
+    <title> ${initParam["productName"]}</title>
     <link href='${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css' rel="stylesheet" type="text/css"/>
 </head>
-<link href="app.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}/app.css" rel="stylesheet" type="text/css"/>
 <body>
 
-<%@include file="_header.jsp"%>
+<%@include file="_header.jsp" %>
 <section class="container px-4">
     <div class="row row-cols-2 gy-5">
         <div class="col-4 p-4">
             <div class="p-3 border bg-light">
-                <%@include file="_topics.jsp"%>
+                <%@include file="_topics.jsp" %>
             </div>
         </div>
         <div class="col-8 p-4">
-            <%@include file="_newsitems.jsp"%>
+            <c:out value="Hello, World"/>
+            <%@include file="_newsitems.jsp" %>
         </div>
     </div>
 </section>
