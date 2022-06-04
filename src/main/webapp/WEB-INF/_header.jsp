@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 
@@ -27,7 +28,13 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href='showlogin.do'>Login</a>
+                        <c:if test="${empty user}">
+                            <a class="nav-link" href='showlogin.do'>Login</a>
+                        </c:if>
+                        <c:if test="${!empty user}">
+                            <a class="nav-link" href='logout.do'>Logout ${user.name}</a>
+                        </c:if>
+
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -35,10 +42,18 @@
                             Color
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<%--                            using expression language to get the colors and add them to the page--%>
-                            <li>${colors[0]}</li>
-                            <li>${colors[1]}</li>
-                            <li>${colors[2]}</li>
+                            <c:choose>
+                                <c:when test="${!empty user}">
+                                    <%--                            using expression language to get the colors and add them to the page--%>
+                                    <li>${colors[0]}</li>
+                                    <li>${colors[1]}</li>
+                                    <li>${colors[2]}</li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li>No User Logged In</li>
+                                </c:otherwise>
+                            </c:choose>
+
 
                         </ul>
                     </li>

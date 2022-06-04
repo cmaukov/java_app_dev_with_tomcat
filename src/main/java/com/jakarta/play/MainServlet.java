@@ -5,6 +5,7 @@ package com.jakarta.play;
  */
 
 import com.jakarta.play.blog.ApplicationSettings;
+import com.jakarta.play.blog.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +29,11 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        setUpData(req,ApplicationSettings.topic, ApplicationSettings.all);
+        setUpData(req, ApplicationSettings.topic, ApplicationSettings.all);
+        if (req.getRequestURI().endsWith("showlogin.do")) {
+            var user = new User("Ivan Draganov");
+            req.setAttribute("user", user);
+        }
         var dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
         dispatcher.forward(req, resp);
     }
