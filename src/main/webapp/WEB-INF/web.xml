@@ -11,4 +11,7 @@
     <listener>
         <listener-class>com.jakarta.play.listeners.SimpleListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>com.jakarta.play.listeners.AppInitialization</listener-class>
+    </listener>
 </web-app>

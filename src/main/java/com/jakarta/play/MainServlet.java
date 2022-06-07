@@ -22,8 +22,7 @@ public class MainServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         product = getServletContext().getInitParameter("productName");
-        var applicationSettings = new ApplicationSettings();
-        getServletContext().setAttribute("app", applicationSettings);
+
         if (product == null || product.isEmpty()) throw new ServletException("Unable to initialize");
     }
 
