@@ -14,4 +14,9 @@
 <!--    <listener>-->
 <!--        <listener-class>com.jakarta.play.listeners.AppInitialization</listener-class>-->
 <!--    </listener>-->
+
+    <listener>
+        <description>Initializes Log4j 2.x</description>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
 </web-app>
