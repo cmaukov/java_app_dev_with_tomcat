@@ -8,10 +8,10 @@
         <param-value>Super Blog</param-value>
     </context-param>
 
-    <listener>
-        <listener-class>com.jakarta.play.listeners.SimpleListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>com.jakarta.play.listeners.AppInitialization</listener-class>
-    </listener>
+<!--    <listener>-->
+<!--        <listener-class>com.jakarta.play.listeners.SimpleListener</listener-class>-->
+<!--    </listener>-->
+<!--    <listener>-->
+<!--        <listener-class>com.jakarta.play.listeners.AppInitialization</listener-class>-->
+<!--    </listener>-->
 </web-app>
