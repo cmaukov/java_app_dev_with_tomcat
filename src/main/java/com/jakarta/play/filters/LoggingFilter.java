@@ -19,8 +19,10 @@ public class LoggingFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
+
+        var wrapper = new LogRequestWrapper(req,logger);
         logger.debug(String.format("Request made to %s", req.getRequestURI()));
-        chain.doFilter(request, response);
+        chain.doFilter(wrapper, response);
     }
 
 
