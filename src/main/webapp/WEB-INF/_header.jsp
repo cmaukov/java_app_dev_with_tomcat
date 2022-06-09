@@ -28,10 +28,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <c:if test="${empty user}">
+                        <c:if test="${empty sessionScope.user}">
                             <a class="nav-link" href='showlogin.do'>Login</a>
                         </c:if>
-                        <c:if test="${!empty user}">
+                        <c:if test="${!empty sessionScope.user}">
                             <a class="nav-link" href='logout.do'>Logout ${user.name}</a>
                         </c:if>
 

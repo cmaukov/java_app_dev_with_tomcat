@@ -30,11 +30,35 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         setUpData(req, ApplicationSettings.topic, ApplicationSettings.all);
         if (req.getRequestURI().endsWith("showlogin.do")) {
-            var user = new User("Ivan Draganov");
-            req.setAttribute("user", user);
+            req.setAttribute("action", "login");
+        }
+        if (req.getRequestURI().endsWith("logout.do")) {
+            var session = req.getSession(false);
+            if (session != null) {
+                session.invalidate();
+            }
         }
         var dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
         dispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getRequestURI().contains("login.do")) {
+            var userName = req.getParameter("username");
+            var password = req.getParameter("password");
+
+            if (userName.isEmpty() || !userName.equals(password)) {
+                resp.sendRedirect(resp.encodeURL("showlogin.do"));
+            } else {
+                var user = new User(userName);
+                var session = req.getSession(true);
+                session.setAttribute("user", user);
+
+                resp.sendRedirect(resp.encodeURL("home"));
+            }
+        }
+
     }
 
     private void setUpData(HttpServletRequest request, String type, String detail) {

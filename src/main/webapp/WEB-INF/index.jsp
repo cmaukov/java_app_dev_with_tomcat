@@ -16,12 +16,14 @@
             <div class="p-3 border bg-light">
                 <c:import url="_topics.jsp" var="topics" scope="application"/>
                 ${topics}
-<%--                <%@include file="_topics.jsp" %>--%>
+                <%--                <%@include file="_topics.jsp" %>--%>
             </div>
         </div>
         <div class="col-8 p-4">
-            <c:out value="Hello, World"/>
-            <%@include file="_newsitems.jsp" %>
+            <c:choose>
+                <c:when test="${action eq 'login'}"><c:import url="_login.jsp"/></c:when>
+                <c:otherwise><c:import url="_newsitems.jsp"/></c:otherwise>
+            </c:choose>
         </div>
     </div>
 </section>
