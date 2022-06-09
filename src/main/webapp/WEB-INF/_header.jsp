@@ -34,8 +34,13 @@
                         <c:if test="${!empty sessionScope.user}">
                             <a class="nav-link" href='logout.do'>Logout ${user.name}</a>
                         </c:if>
-
                     </li>
+                    <c:if test="${empty sessionScope.user==false}">
+                        <li class="nav-item">
+<a class="nav-link" href='<c:url value="/add.do" />'>Create New Item</a>
+                        </li>
+
+                    </c:if>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">

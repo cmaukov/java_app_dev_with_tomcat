@@ -19,4 +19,8 @@
         <description>Initializes Log4j 2.x</description>
         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
     </listener>
+    <session-config>
+<!--        Timeout time in minutes. 1 is typically very short-->
+        <session-timeout>1</session-timeout>
+    </session-config>
 </web-app>
